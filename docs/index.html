@@ -56,15 +56,15 @@
         .logo::before {
             color: #510000;
             z-index: -1;
-            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-            animation: industrialGlitch 4s infinite steps(2);
+            clip-path: polygon(0 0, 100% 0, 100% 35%, 0 45%);
+            animation: industrialGlitch 1s infinite steps(2);
         }
 
         .logo::after {
             color: #5b5b5b;
             z-index: -2;
             clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
-            animation: industrialGlitch 2s infinite steps(2);
+            animation: industrialGlitch 1s infinite steps(2);
         }
 
         @keyframes industrialGlitch {
@@ -92,8 +92,9 @@
             display: flex;
             gap: 2rem;
             margin-top: 8rem;
-            margin-left: 23rem;
+            /*margin-left: 23rem;*/
             position: relative;
+            justify-content: center;
             filter: brightness(70%) contrast(120%);
         }
 
@@ -165,7 +166,7 @@
             }
             70% {
                 background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-                url('img/bg.png');
+                url('img/bg-cover.jpg');
             }
             100% {
                 background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
@@ -176,9 +177,9 @@
         .scan-line {
             position: fixed;
             width: 100%;
-            height: 1px;
+            height: 2px;
             background: rgba(255, 255, 255, 0.1);
-            animation: scan 2s linear infinite;
+            animation: scan 2s linear infinite, scan 2s linear infinite;
             pointer-events: none;
             z-index: 2;
         }
