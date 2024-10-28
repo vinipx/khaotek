@@ -155,22 +155,6 @@
             }
         }
 
-        .mask-layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
-            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-            url('img/bg-cover.jpg');
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
-            opacity: 0; /* Start with hidden */
-            animation: showMask 7s infinite;
-        }
-
         @keyframes showMask {
             0%, 60% {
                 opacity: 0;
@@ -224,8 +208,8 @@
 <body>
 <div class="noise"></div>
 <div class="scan-line"></div>
-<div class="mask-layer"></div>
 <div class="container">
+    <div class="mask-layer"></div>
     <div class="logo">KHAOTEK</div>
     <div class="social-icons">
         <a href="https://open.spotify.com/artist/17XYnsPZTmaNkS3gIIFj9d?si=pnJmlC_zSIOVkO6CASTUNA" title="Spotify">
