@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+    <defs>
+        <filter id="industrial">
+            <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="3" seed="5"/>
+            <feDisplacementMap in="SourceGraphic" scale="2"/>
+        </filter>
+
+        <!-- Glitch effect for target -->
+        <filter id="targetGlitch">
+            <feTurbulence type="turbulence" baseFrequency="0.3" numOctaves="2" seed="2" stitchTiles="stitch"/>
+            <feDisplacementMap in="SourceGraphic" scale="3"/>
+        </filter>
+
+        <!-- Subtle texture -->
+        <filter id="subtleNoise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2"/>
+            <feDisplacementMap in="SourceGraphic" scale="2"/>
+        </filter>
+
+        <!-- Updated filter for a more splattered effect -->
+        <filter id="inkSplash">
+            <feTurbulence type="fractalNoise" baseFrequency="0.1" numOctaves="4" seed="8"/>
+            <feDisplacementMap in="SourceGraphic" scale="10"/>
+        </filter>
+    </defs>
+
+    <!-- First K -->
+    <g filter="url(#inkSplash)" transform="translate(10,0)">
+        <path d="M30,40 L30,160" stroke="#000000" stroke-width="18" stroke-linecap="square"/>
+        <path d="M30,95 L75,35" stroke="#000000" stroke-width="18" stroke-linecap="square"/>
+        <path d="M30,105 L75,165" stroke="#000000" stroke-width="18" stroke-linecap="square"/>
+    </g>
+
+    <!-- H -->
+    <g filter="url(#inkSplash)" transform="translate(65,0)">
+        <path d="M30,40 L30,160 M30,100 L60,100 M60,40 L60,160"
+              stroke="#000000" stroke-width="18" stroke-linecap="square" filter="url(#industrial)"/>
+    </g>
+
+    <!-- A -->
+    <g filter="url(#inkSplash)" transform="translate(115,0)">
+        <path d="M30,150 L60,30 L100,100" stroke="#000000" stroke-width="18" stroke-linecap="butt"/>
+        <path d="M45,110 L55,110" stroke="#000000" stroke-width="18" stroke-linecap="square"/>
+    </g>
+
+    <!-- Enhanced O as Glitch Target -->
+    <g filter="url(#inkSplash)" transform="translate(265,100)">
+        <!-- Main target rings -->
+        <g filter="url(#subtleNoise)">
+            <circle cx="0" cy="0" r="50" stroke="#000000" stroke-width="18" fill="none"/>
+            <circle cx="0" cy="0" r="35" stroke="#000000" stroke-width="4" fill="none"/>
+            <circle cx="0" cy="0" r="25" stroke="#000000" stroke-width="2" fill="none"/>
+        </g>
+
+        <!-- Targeting elements with glitch -->
+        <g filter="url(#targetGlitch)">
+            <!-- Crosshair -->
+            <path d="M-50,0 L50,0" stroke="#000000" stroke-width="2" stroke-dasharray="2,2"/>
+            <path d="M0,-50 L0,50" stroke="#000000" stroke-width="2" stroke-dasharray="2,2"/>
+
+            <!-- Target marks -->
+            <path d="M-30,-30 L-25,-25" stroke="#000000" stroke-width="3"/>
+            <path d="M30,-30 L25,-25" stroke="#000000" stroke-width="3"/>
+            <path d="M-30,30 L-25,25" stroke="#000000" stroke-width="3"/>
+            <path d="M30,30 L25,25" stroke="#000000" stroke-width="3"/>
+        </g>
+
+        <!-- Glitch segments -->
+        <g filter="url(#targetGlitch)">
+            <path d="M-20,0 A20,20 0 0,1 20,0" stroke="#000000" stroke-width="4" fill="none"
+                  transform="rotate(45)"/>
+            <path d="M-15,15 L15,-15" stroke="#000000" stroke-width="3"/>
+        </g>
+
+        <!-- Digital readout marks -->
+        <g filter="url(#subtleNoise)">
+            <rect x="-5" y="-35" width="10" height="2" fill="#000000"/>
+            <rect x="-5" y="33" width="10" height="2" fill="#000000"/>
+            <rect x="-35" y="-5" width="2" height="10" fill="#000000"/>
+            <rect x="33" y="-5" width="2" height="10" fill="#000000"/>
+        </g>
+    </g>
+
+    <!-- T -->
+    <g filter="url(#inkSplash)" transform="translate(280,-10)">
+        <path d="M10,58 L80,50" stroke="#000000" stroke-width="20" stroke-linecap="square"/>
+        <path d="M55,40 L55,160" stroke="#000000" stroke-width="18" stroke-linecap="square"/>
+    </g>
+
+    <!-- E -->
+    <g filter="url(#inkSplash)" transform="translate(350,0)">
+        <path d="M10,40 L80,40" stroke="#000000" stroke-width="18" stroke-linecap="square"/>
+        <path d="M30,40 L30,160" stroke="#000000" stroke-width="18" stroke-linecap="square"/>
+        <path d="M30,100 L70,100" stroke="#000000" stroke-width="18" stroke-linecap="square"/>
+        <path d="M30,160 L80,160" stroke="#000000" stroke-width="18" stroke-linecap="square"/>
+    </g>
+
+    <!-- Last K -->
+    <g filter="url(#inkSplash)" transform="translate(400,0)">
+        <path d="M30,40 L30,160" stroke="#000000" stroke-width="18" stroke-linecap="square"/>
+        <path d="M30,95 L75,35" stroke="#000000" stroke-width="18" stroke-linecap="square"/>
+        <path d="M30,105 L75,165" stroke="#000000" stroke-width="18" stroke-linecap="square"/>
+    </g>
+</svg>
